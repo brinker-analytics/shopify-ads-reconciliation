@@ -97,4 +97,4 @@ Run the tests with `python -m unittest discover -s tests`.
 
 ## License
 
-MIT. See `LICENSE`.
+The code is MIT licensed (see `LICENSE`). The documentation, including this README and the Google Sheets guide, is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (see `LICENSE-docs`). If you reuse it, please credit Eric Brinker at [Brinker Analytics](https://www.brinkeranalytics.com).
