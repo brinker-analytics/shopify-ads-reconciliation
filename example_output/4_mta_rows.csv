@@ -1,0 +1,10 @@
+row,orders,net_sales,share_of_store_orders
+Meta,68,6132.73,17.9%
+Email,52,4529.86,13.7%
+Direct,50,4160.04,13.2%
+Google Shopping,46,3730.11,12.1%
+Organic search,45,3766.59,11.8%
+Referral,33,2805.74,8.7%
+Google Search,31,2646.48,8.2%
+Unattributed,55,4413.61,14.5%
+Total (matches Shopify),380,32185.16,100.0%

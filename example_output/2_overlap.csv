@@ -1,0 +1,6 @@
+row,orders,net_sales,share_of_store_orders
+Meta and Google,99,8260.14,26.1%
+Meta only,147,12422.70,38.7%
+Google only,59,5262.68,15.5%
+Neither platform,75,6239.64,19.7%
+Total,380,32185.16,100.0%
