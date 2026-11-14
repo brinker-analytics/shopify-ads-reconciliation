@@ -70,7 +70,7 @@ None of these tables measure incrementality. They show what each system says hap
 ## What to do with this
 
 - **If Meta and Google together claim more orders than Shopify sold,** stop adding platform ROAS together to judge total spend. Judge the total budget on store revenue divided by total ad spend, and use each platform's numbers to compare campaigns inside that platform.
-- **If one platform claims far more orders than your MTA gives it,** that channel is the first one to test. Hold its ads back in some regions and see whether sales there drop.
+- **If one platform claims far more orders than your MTA gives it,** that channel is a candidate for a test. Test it only if the answer might change the budget and you will act on the result. If both are true, hold its ads back in some regions and see whether sales there drop.
 - **If the Unattributed or Not in GA4 rows are large,** fix the tracking before you move budget on any channel-level number.
 - **If the claims ratio jumps on one day,** check what changed in the tracking on that date before you trust that week's ROAS.
 
