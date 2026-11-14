@@ -7,7 +7,7 @@ Put your Shopify orders, what Meta and Google say they drove, what GA4 recorded 
 
 ## Why the numbers differ
 
-Each ad platform counts the orders it can connect to its own ads: a click, and for Meta a view, inside its attribution window. It can't see the other platforms. When a buyer clicks a Meta ad, then a Google ad, then buys, both platforms count that order. Add up every platform's claims and the total can be larger than what the store sold.
+Each ad platform counts the orders it can connect to its own ads: a click, and for some ad types a view, inside its attribution window. It can't see the other platforms. When a buyer clicks a Meta ad, then a Google ad, then buys, both platforms count that order. Add up every platform's claims and the total can be larger than what the store sold.
 
 Shopify counts each order once. GA4 records most orders but misses some (ad blockers, consent choices, buyers who close the tab before the confirmation page loads). An MTA tool tries to give each order one home.
 
@@ -56,14 +56,14 @@ The example data is made up (see `example_data/README.md`). On it, the store has
 
 Use the same date range, time zone and attribution setting in every source, or you'll be comparing different weeks.
 
-Prefer a spreadsheet? `template/google_sheets_layout.md` builds the same tables with formulas. Have the data in a warehouse? `sql/reconcile_bigquery.sql` has the same queries in BigQuery SQL.
+Prefer a spreadsheet? `template/google_sheets_layout.md` builds the claims, MTA, GA4 and daily-ratio tables with formulas. Have the data in a warehouse? `sql/reconcile_bigquery.sql` has the duplicate check and the claims, MTA and GA4 queries in BigQuery SQL.
 
 ## Reading the results
 
 - **Claims divided by store total.** Track it weekly. A sudden jump usually means something in the tracking changed on that date, such as a duplicated purchase event.
 - **Not in GA4.** That share of orders is invisible in GA4 reports, whatever channel drove them.
 - **Unattributed.** That share of orders has no channel in the MTA. Keep the row in every report so the totals still match Shopify.
-- **Claimed minus MTA.** A big gap means the platform is counting orders that the MTA places on other channels.
+- **Claimed minus MTA.** A big gap means the platform is counting orders that the MTA places on other channels or leaves unattributed. It is a net difference, so treat it as a size, not an order count.
 
 None of these tables measure incrementality. They show what each system says happened, and they can't show what would have happened without the ads.
 
@@ -74,7 +74,7 @@ None of these tables measure incrementality. They show what each system says hap
 - **If the Unattributed or Not in GA4 rows are large,** fix the tracking before you move budget on any channel-level number.
 - **If the claims ratio jumps on one day,** check what changed in the tracking on that date before you trust that week's ROAS.
 
-If you want to know which of these numbers to trust with your budget, send me a note and we'll talk it through: [Schedule a call](https://brinkeranalytics.com/contact).
+If you want to know which of these numbers to trust with your budget, send me a note and we'll talk it through: [Get in touch](https://brinkeranalytics.com/contact).
 
 ## Free reading on brinkeranalytics.com
 
@@ -94,8 +94,8 @@ If you want to know which of these numbers to trust with your budget, send me a 
 reconcile.py                      the script
 template/orders_template.csv      blank orders file (one row per Shopify order)
 template/platform_daily_template.csv  blank daily platform totals
-template/google_sheets_layout.md  the same tables as spreadsheet formulas
-sql/reconcile_bigquery.sql        the same tables in BigQuery SQL
+template/google_sheets_layout.md  four of the tables as spreadsheet formulas
+sql/reconcile_bigquery.sql        the duplicate check and three of the tables in BigQuery SQL
 example_data/                     made-up example data and how it was generated
 example_output/                   results of the script on the example data
 scripts/make_example_data.py      seeded generator for the example data

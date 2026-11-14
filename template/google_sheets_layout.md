@@ -1,6 +1,6 @@
 # Google Sheets layout
 
-The same reconciliation as `reconcile.py`, built with formulas. Make a new sheet with four tabs.
+Tables 1, 3, 4 and 6 from `reconcile.py`, built with formulas. Make a new sheet with four tabs.
 
 ## Tab 1: `Orders`
 
