@@ -76,6 +76,8 @@ None of these tables measure incrementality. They show what each system says hap
 
 If you want to know which of these numbers to trust with your budget, send me a note and we'll talk it through: [Get in touch](https://brinkeranalytics.com/contact).
 
+Lined the reports up and still not sure which number to trust? [Why Your Numbers Don't Match](https://brinkeranalytics.com/guides/why-your-numbers-dont-match) walks through the Two-Clue Check, then which number to use for which decision.
+
 ## Free reading on brinkeranalytics.com
 
 - [Why your Meta, Google, GA4, Shopify, and finance numbers disagree](https://brinkeranalytics.com/insights/why-marketing-numbers-disagree)
